@@ -42,6 +42,7 @@ let retrieve_list = new Promise((resolve, reject) => {
    });
 });
 
+// use the console log in the callback above to get data.
 retrieve_list.then((data) => {
 //   console.log(data);
 })
