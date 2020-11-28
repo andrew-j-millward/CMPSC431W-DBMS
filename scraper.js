@@ -15,8 +15,14 @@ const countries_id = {
    "Czechoslovakia": 10,
    "Italy": 11
 };
+const roles = {
+   'Self-Propelled_Guns': 5,
+   'Light_Tanks': 1,
+   'Medium_Tanks': 2,
+   'Tank_Destroyers': 4
+}
 const base_url = 'https://wiki.wargaming.net/en/';
-const role_url = 'Heavy_Tanks';
+const role_url = 'Tank_Destroyers';
 let retrieve_list = new Promise((resolve, reject) => {
    let tanks_url = base_url + role_url;
    let tanks_list = [];
@@ -26,7 +32,8 @@ let retrieve_list = new Promise((resolve, reject) => {
       for (let i = 0; i < Object.keys(all_tanks).length && 
             all_tanks[i] != undefined; i++) {
          const tank_name = all_tanks[i].children[3].children[1].children[0].data;
-         tanks_list.push(tank_name + ',3');
+         tanks_list.push(tank_name + ',' + roles[role_url]);
+         console.log(tank_name + ',' + roles[role_url]);
          resolve(tanks_list);
       }
    }).catch(err => {
@@ -36,5 +43,5 @@ let retrieve_list = new Promise((resolve, reject) => {
 });
 
 retrieve_list.then((data) => {
-   console.log(data);
+//   console.log(data);
 })
