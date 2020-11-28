@@ -8,7 +8,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //$username = 'abc123';   <---- MAKE THESE IN 'user_infor.php'
-//$password = 'SOME_PASSWORD';   <<---- MAKE THESE IN 'user_info.php'
+//$password = 'SOME_PASSWORD';   <---- MAKE THESE IN 'user_info.php'
 $host = 'localhost';
 $dbname = '431W_project';
 
